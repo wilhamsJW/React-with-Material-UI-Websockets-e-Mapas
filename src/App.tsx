@@ -8,6 +8,10 @@ import {
 } from "@mui/material";
 import theme from './theme'
 import { Navbar } from './components/Navbar'
+import { styled } from '@mui/material/styles'
+
+// Estilizando a tag form sem ter que estilizar dentro dela como feito abaixo na div do button
+const Form = styled('form')(({ theme }) => ({margin: theme.spacing(1)}))
 
 function App() {
   return (
@@ -17,7 +21,7 @@ function App() {
       <Navbar/>
       <Grid container>
         <Grid item xs={12} sm={3}>
-          <form>
+          <Form>
             {/** fullWidth displayEmpty defaultValue={""} -> faz com que ocupe um maior espaço */}
             <Select fullWidth displayEmpty defaultValue={""}>
               <MenuItem value="">
@@ -31,7 +35,7 @@ function App() {
             <div style={{textAlign: 'center', margin: theme.spacing(1)}}>
               <Button type='submit' variant="contained">Iniciar Rota</Button>
             </div>
-          </form>
+          </Form>
         </Grid>
         <Grid item xs={12} sm={9}></Grid>
       </Grid>
