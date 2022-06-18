@@ -1,4 +1,11 @@
-import { CssBaseline, Grid, Select, ThemeProvider, MenuItem, Button } from "@mui/material";
+import { 
+  CssBaseline, 
+  Grid, 
+  Select, 
+  ThemeProvider, 
+  MenuItem, 
+  Button 
+} from "@mui/material";
 import theme from './theme'
 import { Navbar } from './components/Navbar'
 
