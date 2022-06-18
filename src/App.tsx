@@ -1,10 +1,12 @@
-
+import { Button, ThemeProvider } from "@mui/material";
+import theme from './theme'
 
 function App() {
   return (
-    <div className="App">
-      OLá Wilhams MUNDO
-    </div>
+    <ThemeProvider theme={theme}>
+      <Button>Júnior</Button>
+    </ThemeProvider>
+
   );
 }
 
