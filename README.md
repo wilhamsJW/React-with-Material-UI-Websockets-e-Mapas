@@ -14,6 +14,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### LIB icon material
 npm install @mui/icons-material
 
+### LIB GOOGLE MAPS [https://www.npmjs.com/package/google-maps](https://www.npmjs.com/package/google-maps)
+npm install google maps
+
 ### Criação de conta no Google Cloud Plataform
 Para criar a conta é bem simples mas após isso precisamo de alguns passos
 
