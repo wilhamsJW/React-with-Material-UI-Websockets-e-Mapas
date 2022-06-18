@@ -9,7 +9,12 @@ import {
 import theme from './theme'
 import { Navbar } from './components/Navbar'
 import { styled } from '@mui/material/styles'
+
+// React
 import { useEffect } from "react";
+
+// CSS
+import './index.css'
 
 // Google Maps
 import { Loader } from 'google-maps'
@@ -26,9 +31,11 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      await loader.load()
-      const divMap = document.getElementById('map') as HTMLDivElement 
-      new google.maps.Map(divMap, {zoom: 15})
+      const google = await loader.load();
+      const map = new google.maps.Map(document.getElementById('map') as HTMLDivElement, {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8,
+});
     })()
   }, [])
 
