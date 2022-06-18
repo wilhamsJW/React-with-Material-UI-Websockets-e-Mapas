@@ -4,9 +4,8 @@ import theme from './theme'
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Button>Júnior</Button>
+      <Button variant="outlined">Júnior</Button>
     </ThemeProvider>
-
   );
 }
 

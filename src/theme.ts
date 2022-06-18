@@ -1,5 +1,4 @@
-import { PaletteOptions } from "@mui/material";
-import { createTheme } from "@mui/system";
+import { createTheme, PaletteOptions } from "@mui/material";
 
 const palette: PaletteOptions = {
     mode: 'dark',
