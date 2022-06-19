@@ -11,13 +11,16 @@ import { Navbar } from './components/Navbar'
 import { styled } from '@mui/material/styles'
 
 // React
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 // CSS
 import './index.css'
 
 // Google Maps
 import { Loader } from 'google-maps'
+
+// Location
+import getCurrentPosition from './util/geolacation'
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyBN0GIlDtAWOzNXzxu-nhiyL3N-4OYVA00";
 
@@ -28,13 +31,16 @@ const Form = styled('form')(({ theme }) => ({margin: theme.spacing(1)}))
 const MapContainer = styled('div')(({ theme }) => ({ width: "100%", height: "100%" }))
 
 function App() {
-
+  // useRef -> uma forma de acessar a DOM
+  const mapRef = useRef<google.maps.Map>()
   useEffect(() => {
     (async () => {
-      const google = await loader.load();
-      const map = new google.maps.Map(document.getElementById('map') as HTMLDivElement, {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8,
+      await loader.load();
+      const position = await getCurrentPosition({enableHighAccuracy: true})
+      // mapRef.current -> guardando o mapa criado dentro do current
+      mapRef.current =  new google.maps.Map(document.getElementById('map') as HTMLDivElement, {
+        zoom: 15,
+        center: position
 });
     })()
   }, [])

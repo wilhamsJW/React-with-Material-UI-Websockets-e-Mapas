@@ -1,4 +1,4 @@
-export function getCurrentPosition(
+export default function getCurrentPosition(
     options?: PositionOptions
 ) : Promise<{ lat: number; lng: number }> {
     return new Promise((resolve, reject) => {
